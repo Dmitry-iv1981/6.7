@@ -1,0 +1,61 @@
+<!DOCTYPEhtml>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>6.7</title>
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<h1>Работа 6.7</h1>
+
+</head>
+<body>
+	
+
+<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0</div>
+</div>
+<button class="button1" type="button">+1%</button>
+<button class="button2" type="button">+3%</button>
+<button class="button3" type="button">+7%</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	
+	let x= 0;
+	let elem=document.querySelector('.progress-bar');
+	function varBar(){
+		
+		if (x>=100) {
+			x=100;
+		}
+		elem.textContent=`${x}%`;
+		elem.style= `width: ${x}%`;
+	}
+	varBar();
+	let button1= document.querySelector('.button1');
+	let button2= document.querySelector('.button2');
+	let button3= document.querySelector('.button3');
+	button1.addEventListener('click',addOnePercent);
+	button2.addEventListener('click',addThreePercent);
+	button3.addEventListener('click',addSevenPercent);
+	
+	function addOnePercent(){
+		x=x+1;
+		varBar();
+
+	}
+
+	function addThreePercent(){
+		x=x+3;
+		varBar();
+	}
+
+	function addSevenPercent(){
+		x=x+7;
+		varBar();
+	}
+	
+
+</script>
+</body>
+</html>
